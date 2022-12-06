@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3GL1K6TKX3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-3GL1K6TKX3');
+</script>
+    <meta charset="UTF-8">
+    <title>My profolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="css/html5reset.css">
+	<link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <a href="#project" class="skip">Skip to Main Content</a>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a class="current" href="project.html">Project</a></li>
+                <li><a href="about.html">About Me</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <aside></aside>
+    <main id="main">
+        <h1>Project</h1>
+        <p>
+          This is a consultancy project for a company that produced lighting. Their demand is to cooperate with other enterprised and to utilize the lighting with interactive products. 
+		    </p>
+
+        <p>
+          The final concept focuses on the hearing impaired people and is dedicated to improving thier lives. The light is used in various scenarios with an APP to tell the people what happen. Certain situations can also be comstomized by users. I joined all the research and ideation process and deliver the UI design. 
+        </p>
+
+        <img id="designproject" class="designproject" src="images/voicer1.jpg" alt="The products" width="500"/>
+		<figcaption>The first poster of my design.</figcaption>
+		
+        <img id="designproject" class="designproject" src="images/voicer2.jpg" alt="Analysis"width="500"/>
+		<figcaption>The second poster of my design.</figcaption>
+        
+        <div class="options">
+            <button id="play">Play Video</button>
+            <button id="pause">Pause Video</button>
+            <button id="slower">Slow Down</button>
+            <button id="faster">Speed Up</button>
+            <button id="skip">Skip Ahead</button>
+        </div>
+        <figure>
+            <figcaption>[Project scenario video of my project]</figcaption>
+            <video class="video"
+                autoplay="false"
+                width="640"
+                height="360"
+                id="videoplayer"
+                preload="none"
+                src="images/video.mp4">
+              Your browser does not support HTML5 video.
+            </video>
+        </figure>
+        <button id="mute">Mute</button><br>
+        <label for="slider">Volume</label>: 0
+        <input type="range" id="slider" min="0" max="100" value="100" step="10"> 100%<br>
+        <div>Volume is: <span id="volume"></span><br><br></div>
+
+    </main>
+    <script src="js/video.js"></script>
+    
+    <footer>
+		&copy; 2022
+	</footer>
+
+</body>
+</html>

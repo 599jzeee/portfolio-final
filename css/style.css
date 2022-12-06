@@ -1,0 +1,310 @@
+html {
+	font-family: 'Montserrat', sans-serif;
+	background-color: rgb(214, 213, 212);
+}
+
+.skip {
+    position: absolute;
+    top: -100px;
+    color: black;
+}
+
+.skip:focus {
+    top: 0px;
+	color: black;
+ }
+
+@keyframes zoomin {
+    from {
+        width: 20%;
+    }
+    to {
+        width: 40%;
+    }
+}
+
+#self {
+    animation-name: zoomin;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+}
+
+body {
+	margin-top: 1%;
+	margin-bottom: 1%;
+	margin-left: 5%;
+	margin-right: 5%;
+	padding: 1%;
+	font-size: large;
+	line-height: 30px;
+	display: grid;
+	grid-template: 100px 10px 1fr 100px / 1fr;
+}
+
+header {
+	grid-row: 1 / span 1;
+}
+
+aside {
+	grid-area: 2 / span 1;
+}
+
+main {
+	grid-row: 3 / span 1;
+}
+
+footer { 
+	grid-row: 4 / span 1;
+	text-align: center;
+}
+
+img {
+    height: auto;
+	width: 300px;
+    border: 2px solid #95a7db;
+    padding: 5px;
+    border-radius: 2px;
+    margin: 5px;
+	opacity: 1;
+}
+
+img:hover {
+	opacity:0.3;
+}
+
+h1 {
+	font-size: 1.5em; 
+	font-weight: bold;
+	position: relative;
+}
+
+h1::before {  
+	transform: scaleX(0);
+	transform-origin: bottom right;
+  }
+  
+h1:hover::before {
+	transform: scaleX(1);
+	transform-origin: bottom left;
+  }
+  
+h1::before {
+	content: " ";
+	display: block;
+	position: absolute;
+	top: 0; right: 0; bottom: 0; left: 0;
+	inset: 0 0 0 0;
+	background: hsl(200 100% 80%);
+	z-index: -1;
+	transition: transform .5s ease;
+  }
+  
+  
+  @media (orientation: landscape) {
+	body {
+	  grid-auto-flow: column;
+	}
+  }
+
+  h2 {
+	font-size: 1em; 
+	font-weight: bold;
+}
+
+p, h1, h2 {
+    padding: 10px;
+}
+
+nav {
+    background-color: rgb(255, 255, 255);
+    overflow: hidden;
+	opacity: 0.5;
+}
+
+nav a {
+    display: block;
+	float: left;
+    text-align: center;
+    padding: 10px 10px;
+    font-size: 20px;
+    color: #000;
+}
+
+nav a:hover {
+    background-color: rgb(150, 184, 234);
+}
+
+
+nav a.current {
+    border: 2px solid rgb(101, 51, 199);
+}
+
+.container {
+	margin: 0px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+#designproject {
+	width: 80%;
+	border: none;
+	height: auto;
+}
+
+button {
+	animation: wiggle 2s linear infinite;
+  }
+
+@keyframes wiggle {
+	0%, 7% {
+	  transform: rotateZ(0);
+	}
+	15% {
+	  transform: rotateZ(-15deg);
+	}
+	20% {
+	  transform: rotateZ(10deg);
+	}
+	25% {
+	  transform: rotateZ(-10deg);
+	}
+	30% {
+	  transform: rotateZ(6deg);
+	}
+	35% {
+	  transform: rotateZ(-4deg);
+	}
+	40%, 100% {
+	  transform: rotateZ(0);
+	}
+  }
+  
+  button {
+	left: calc(50% - 3em);
+	top: calc(50% - 2em);
+	
+	height: 4em;
+	width: 6em;
+	
+	background: #444;
+	background: linear-gradient(top, #555, #333);
+	border: none;
+	border-top: 3px solid orange;
+	border-radius: 0 0 0.2em 0.2em;
+	color: #fff;
+	font-family: Helvetica, Arial, Sans-serif;
+	font-size: 1em;
+	transform-origin: 50% 5em;
+  }
+
+.options{
+	margin-top: 50px;
+	padding: 10px;
+	border:2px solid rgb(154, 154, 206);
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+.video{
+	display: block;
+	width: 90%;
+	margin:  15px;
+}
+
+figcaption{
+	text-align: center;
+}
+.oldSchool{
+	filter: grayscale(100%);
+	width:75%;
+	border:5px double grey;
+	border-radius:20px;
+}
+
+
+@media (min-width: 481px) and (max-width: 1024px) {
+	body {
+		display: grid;
+		grid-template: 100px 1fr 100px / 100px 1fr 100px;
+	}
+
+	header {
+		grid-area: 1 / 1 / span 1 / span 3;
+	}
+
+	aside {
+		grid-area: 2 / 1 / span 1 / span 1;
+	}
+
+	main {
+		grid-area: 2 / 2 / span 1 / span 1;
+	}
+
+	footer {
+		grid-area: 3 / 1 / span 1 / span 3;
+	}
+
+	.container {
+		margin: 0px;
+		display: flex;
+		justify-content: center;
+		flex-wrap: wrap;
+		gap: 5px;
+	}
+	nav a {
+		display: block;
+		float: left;
+		text-align: center;
+		padding: 10px 10px;
+		font-size: 20px;
+		color: #000;
+	}
+}
+
+/* Media Query for Laptops and Desktops */
+@media all and (min-width: 1025px) {
+	body {
+		display: grid;
+		grid-template: 100px 1fr 100px / 100px 1fr 100px;
+	}
+
+	header {
+		grid-area: 1 / 1 / span 1 / span 3;
+	}
+
+	aside {
+		grid-area: 2 / 1 / span 1 / span 1;
+	}
+
+	main {
+		grid-area: 2 / 2 / span 1 / span 1;
+	}
+
+	footer {
+		grid-area: 3 / 1 / span 1 / span 3;
+	}
+
+	.container {
+		margin: 0px;
+		display: flex;
+		justify-content: center;
+		flex-wrap: wrap;
+		gap: 5px;
+	}
+
+	#designproject {
+		width: 80%;
+		border: none;
+		height: auto;
+
+	nav a {
+		display: block;
+		float: left;
+		text-align: center;
+		padding: 20px 20px;
+		font-size: 20px;
+		color: #000;
+	}
+}
